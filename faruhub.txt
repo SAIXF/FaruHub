@@ -21,9 +21,14 @@ Section:NewToggle("FastAttack", "ToggleInfo", function(state)
 end)
 
 local Tab = Window:NewTab("Setting")
+local Section = Tab:NewSection("RTX")
 
 Section:NewButton("RTX OFF", "ButtonInfo", function()
     print("Clicked")
+end)
+
+Section:NewSlider("OFF", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
 local colors = {
